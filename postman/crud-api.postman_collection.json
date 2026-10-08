@@ -1,0 +1,106 @@
+{
+  "info": {
+    "name": "CRUD Notas API - Aula 05",
+    "description": "Coleção Postman para a API CRUD de notas — Aula 05 (Criando APIs para o front-end)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Listar todas as notas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://atividade-crud-api.onrender.com/api/notas",
+          "protocol": "https",
+          "host": ["atividade-crud-api", "onrender", "com"],
+          "path": ["api", "notas"]
+        }
+      },
+      "response": [
+        {
+          "name": "Resposta 200",
+          "code": 200,
+          "status": "OK",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": "[{\"id\":1,\"titulo\":\"Criar repositório Git\",\"concluido\":false}]"
+        }
+      ]
+    },
+    {
+      "name": "Buscar nota por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://atividade-crud-api.onrender.com/api/notas/1",
+          "protocol": "https",
+          "host": ["atividade-crud-api", "onrender", "com"],
+          "path": ["api", "notas", "1"],
+          "variable": [{ "key": "id", "value": "1" }]
+        }
+      },
+      "response": [{ "name": "Resposta 200", "code": 200, "status": "OK", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": "{\"id\":1,\"titulo\":\"Criar repositório Git\",\"concluido\":false}" }]
+    },
+    {
+      "name": "Criar nota",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": JSON.stringify({ titulo: "Nova nota", concluido: false })
+        },
+        "url": {
+          "raw": "https://atividade-crud-api.onrender.com/api/notas",
+          "protocol": "https",
+          "host": ["atividade-crud-api", "onrender", "com"],
+          "path": ["api", "notas"]
+        }
+      },
+      "response": [
+        {
+          "name": "Resposta 201",
+          "code": 201,
+          "status": "Created",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": "{\"id\":4,\"titulo\":\"Nova nota\",\"concluido\":false}"
+        }
+      ]
+    },
+    {
+      "name": "Atualizar nota",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": JSON.stringify({ titulo: "Nota atualizada", concluido: true })
+        },
+        "url": {
+          "raw": "https://atividade-crud-api.onrender.com/api/notas/1",
+          "protocol": "https",
+          "host": ["atividade-crud-api", "onrender", "com"],
+          "path": ["api", "notas", "1"],
+          "variable": [{ "key": "id", "value": "1" }]
+        }
+      },
+      "response": [{ "name": "Resposta 200", "code": 200, "status": "OK", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": "{\"id\":1,\"titulo\":\"Nota atualizada\",\"concluido\":true}" }]
+    },
+    {
+      "name": "Deletar nota",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://atividade-crud-api.onrender.com/api/notas/1",
+          "protocol": "https",
+          "host": ["atividade-crud-api", "onrender", "com"],
+          "path": ["api", "notas", "1"],
+          "variable": [{ "key": "id", "value": "1" }]
+        }
+      },
+      "response": [{ "name": "Resposta 200", "code": 200, "status": "OK", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": "{\"mensagem\":\"Nota removida\",\"nota\":{\"id\":1,\"titulo\":\"Criar repositório Git\",\"concluido\":false}}" }]
+    }
+  ]
+}
