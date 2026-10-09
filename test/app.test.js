@@ -1,4 +1,8 @@
-const app = require("./server.js");
+const app = require("../server.js");
+
+if (require.main === module) {
+  tests();
+}
 
 function tests() {
   let passed = 0;
