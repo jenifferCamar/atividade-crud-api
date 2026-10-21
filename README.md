@@ -4,7 +4,7 @@ API REST com Express implementando as quatro operações CRUD (Create, Read, Upd
 
 ## Deploy
 
-**[Acessar API](https://atividade-crud-api.onrender.com)** (Render)
+Deploy na plataforma Render — em andamento. A API já está no GitHub em `jenifferCamar/atividade-crud-api` e pode ser publicada a partir de `render.yaml` (Web Service, `npm install` como build, `npm start` como start command e health check em `/api/saude`). O link `atividade-crud-api.onrender.com` será reativado quando o serviço for criado.
 
 ## Tecnologias
 
