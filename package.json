@@ -2,7 +2,7 @@
   "name": "atividade-crud-api",
   "version": "1.0.0",
   "private": true,
-  "description": "API CRUD com Express para a Atividade 01 da Aula 05 — Frameworks CSS",
+  "description": "API CRUD com Express para a Atividade 01 da Aula 05 — Criando APIs para o front-end",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
