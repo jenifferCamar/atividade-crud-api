@@ -17,7 +17,7 @@ let notas = NOTAS_PADRAO.map((n) => ({ ...n }));
 let persistenciaAtiva = false;
 
 app.disable("x-powered-by");
-app.use(cors());
+app.use(cors({ origin: process.env.CORS_ORIGIN || "*" }));
 app.use(express.json());
 
 function carregarNotas() {
